@@ -24,5 +24,7 @@ sudo openssl x509 -req -in tls.csr \
                   -out tls.crt \
                   -days 365
 
-userid=`id`
+userid=`id -un`
 sudo chown $userid:$userid tls.crt
+
+echo "Certificates generated"
